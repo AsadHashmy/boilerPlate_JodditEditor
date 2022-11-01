@@ -4,6 +4,7 @@ import JoditEditor from "jodit-react";
 export default function Editor() {
   const editor = useRef(null);
   const [content, setContent] = useState("Start writing");
+  const [files, setFiles] = useState([]);
   const config = {
     readonly: false,
     enableDragAndDropFileToEditor: true,
@@ -21,7 +22,9 @@ export default function Editor() {
         value={content}
         config={config}
         onBlur={handleUpdate}
-        onChange={(newContent) => {}}
+        onChange={(newContent) => {
+          console.log(newContent);
+        }}
       />
       {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
     </div>
